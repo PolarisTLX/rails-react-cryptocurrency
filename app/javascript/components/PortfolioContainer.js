@@ -16,6 +16,7 @@ class PortfolioContainer extends Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleSelect = this.handleSelect.bind(this)
   }
 
   handleChange(e){
@@ -37,10 +38,15 @@ class PortfolioContainer extends Component {
     console.log(this.state.search_results);
   }
 
+  handleSelect(e){
+    e.preventDefault()
+    debugger
+  }
+
   render(){
     return(
       <div>
-        <Search searchResults={this.state.search_results} handleChange={this.handleChange}/>
+        <Search searchResults={this.state.search_results} handleChange={this.handleChange} handleSelect={this.handleSelect}/>
         <Calculate/>
       </div>
     )
