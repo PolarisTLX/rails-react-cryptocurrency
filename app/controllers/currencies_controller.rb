@@ -4,7 +4,7 @@ class CurrenciesController < ApplicationController
   end
 
   def search
-    @currencies = Current.where('LOWER(name) LIKE?', "%#{params[:serach].downcase}%")
+    @currencies = Currency.where('LOWER(name) LIKE ?', "%#{params[:search].downcase}%")
     render json: { currencies: @currencies }
   end
 
